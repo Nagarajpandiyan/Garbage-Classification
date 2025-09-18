@@ -137,3 +137,128 @@ The following parameters were tuned using WandB:
 pip install torch torchvision wandb matplotlib pandas
 wandb.login(key='YOUR_WANDB_API_KEY')
 DATA_PATH = '/path/to/Garbage classification'
+
+# Garbage Classification – Part B: Fine-tuning a Pre-trained CNN
+
+## **1. Objective**
+
+The goal of Part B is to **fine-tune a pre-trained CNN model** on the Garbage Classification dataset and compare its performance with a model trained from scratch. Fine-tuning allows leveraging knowledge learned from large datasets (like ImageNet) to improve accuracy and reduce training time.
+
+---
+
+## **2. Dataset**
+
+* Dataset: [Garbage Classification Dataset](https://drive.google.com/file/d/1nmqD6P14FvoMqqmIseqkuIe2Y40iM2SG/view)
+* Classes: `cardboard`, `glass`, `metal`, `paper`, `plastic`, `trash`
+* Data split:
+
+  * 80% for training
+  * 20% for validation and testing (equally split)
+
+---
+
+## **3. Pre-trained Model**
+
+* Model used: **ResNet50** (from `torchvision.models`)
+* Adjustments:
+
+  * Input images resized to `224×224` to match ImageNet input size.
+  * Last fully connected layer replaced with **6 neurons** for the garbage classes.
+
+---
+
+## **4. Fine-tuning Strategies**
+
+Three strategies were explored:
+
+1. **Strategy 1:** Freeze all convolutional layers and train only the last fully connected layer. 
+2. **Strategy 2:** Freeze first few layers (initial blocks) and fine-tune remaining layers. 
+3. **Strategy 3:** Fine-tune all layers with a smaller learning rate for pre-trained layers. 
+
+---
+
+## **5. Training Details**
+
+* Optimizer: `Adam`
+* Loss function: `CrossEntropyLoss`
+* Batch size: 32
+* Learning rate: 0.001 (last layer), 0.0001 (frozen layers for partial fine-tuning)
+* Number of epochs: 10–15
+* Logging: **Weights & Biases (WandB)** for hyperparameters, training/validation loss, and accuracy.
+
+---
+
+## **6. Evaluation**
+
+* Model checkpoint saved as `best_model.pth`. 
+* Test accuracy reported using the held-out test set. 
+* **10×3 grid of sample images** from the test set showing predicted vs true labels. 
+
+---
+
+## **7. Observations**
+
+* Fine-tuning significantly improves accuracy compared to training from scratch.
+* Freezing initial layers reduces training time while retaining good performance.
+* WandB logs allow visualizing the impact of different fine-tuning strategies.
+
+---
+
+## **8. Optional / Additional Tasks Completed**
+
+* Model checkpointing for later use. 
+* Comparison with scratch-trained CNN model. 
+* Hyperparameter tracking and metrics visualization using WandB. 
+
+---
+
+## **9. How to Run**
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/<user-id>/garbage_classification_partB.git
+cd garbage_classification_partB
+```
+
+2. Install dependencies:
+
+```bash
+pip install torch torchvision matplotlib pandas wandb
+```
+
+3. Run the notebook:
+
+```bash
+jupyter notebook
+```
+
+4. Train the model or load the checkpoint `best_model.pth`.
+5. View results and WandB dashboard for training metrics.
+
+---
+
+## **10. Results**
+
+* Test Accuracy: 
+* Sample predictions: shown in 10×3 grid.
+* Model checkpoint and WandB logs saved for reproducibility.
+
+---
+
+## **11. File Structure**
+
+```
+garbage_classification_partB/
+├─ notebooks/
+│   └─ partB_finetuning.ipynb
+├─ best_model.pth
+├─ requirements.txt
+├─ README.md
+└─ wandb/   # Optional: WandB logs
+```
+
+---
+
+
+
