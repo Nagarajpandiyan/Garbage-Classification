@@ -25,7 +25,7 @@ from pandas.plotting import parallel_coordinates
 wandb.login(key='0530bbf36999cf23c9faffc230ca42a929ee045b')
 entity = 'cs24s023-iitm-ac-in'
 project = 'garbage_classification'
-os.environ["WANDB_NOTEBOOK_NAME"] = "garbage_cnn_human_style.py"
+os.environ["WANDB_NOTEBOOK_NAME"] = "garbage_cnn.py"
 
 
 # In[2]:
