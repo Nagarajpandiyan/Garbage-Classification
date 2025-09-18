@@ -323,7 +323,7 @@ PartC/
 
 ---
 
-## ▶️ How to Run
+## ▶How to Run
 1. Open **`partC_notebook.ipynb`** in Jupyter Notebook or Google Colab.  
 2. Set the `DATA_PATH` to your Garbage Classification dataset folder.  
 3. Run all cells in order:
