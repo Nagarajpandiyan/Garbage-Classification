@@ -260,5 +260,108 @@ garbage_classification_partB/
 
 ---
 
+# Part C: Using a Pre-trained YOLOv8 Model
+
+##  Overview
+This part uses a pre-trained **YOLOv8** model to detect and classify garbage items in images.  
+The goal is to demonstrate object detection using a state-of-the-art model without training from scratch.  
+Optional visualizations such as **feature maps** and **guided backpropagation** are included to understand the model’s internal behavior.
+
+---
+
+##  Requirements
+- Python **3.11+**
+- **PyTorch 2.8.0+cu128**
+- **Ultralytics 8.3.201+**
+- OpenCV
+- Matplotlib
+- CUDA-enabled GPU for faster inference  
+
+Install dependencies with:
+
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+pip install ultralytics opencv-python matplotlib
+```
+
+---
+
+##  File Structure
+```
+PartC/
+├── sample_images/       # Sample images from the Garbage Classification dataset
+├── yolo_demo.mp4        # Output demo video
+├── partC_notebook.ipynb # Jupyter notebook for Part C
+└── README.md            # This file
+```
+
+---
+
+##  Steps Performed
+
+### **1. Load Pre-trained YOLOv8 Model**
+- The `YOLO("yolov8n.pt")` model is loaded.  
+- Pre-trained on COCO dataset and used for inference without fine-tuning.
+
+### **2. Prepare Sample Images**
+- Randomly selected **30 images** from the Garbage Classification dataset.  
+- YOLOv8 automatically pre-processes them during inference.
+
+### **3. Run YOLO Inference**
+- Images are passed through YOLOv8.  
+- Detected objects annotated with bounding boxes and class labels.
+
+### **4. Generate Demo Video**
+- Annotated frames combined into a browser-friendly MP4 video (`yolo_demo.mp4`) at **2 FPS**.  
+- Demonstrates the model’s detection ability.
+
+### **5. Optional Visualizations**
+- **Feature Maps:**  
+  Extract and visualize intermediate feature maps from YOLO backbone layers.  
+- **Guided Backpropagation:**  
+  Apply guided backpropagation to visualize gradients showing which regions contribute most to detections.
+
+---
+
+## ▶️ How to Run
+1. Open **`partC_notebook.ipynb`** in Jupyter Notebook or Google Colab.  
+2. Set the `DATA_PATH` to your Garbage Classification dataset folder.  
+3. Run all cells in order:
+   - Load pre-trained model  
+   - Collect sample images  
+   - Run inference  
+   - Generate demo video  
+   - (Optional) Visualizations  
+
+Example snippet:
+
+```python
+from ultralytics import YOLO
+
+DATA_PATH = "/path/to/garbage_dataset"
+VIDEO_OUTPUT = "yolo_demo.mp4"
+
+model = YOLO("yolov8n.pt")
+```
+
+---
+
+## Outputs
+-  **Annotated Video:** `yolo_demo.mp4`
+-  **Feature Maps:** Visualizations of intermediate backbone layers
+-  **Guided Backpropagation:** Gradient-based visualizations
+
+---
+
+##  Notes
+- GPU highly recommended; CUDA is used automatically if available.  
+- Visualizations provide interpretability of YOLO’s internal features.  
+- Fine-tuning on Garbage Classification dataset is **optional**; pre-trained weights were used here.
+
+---
+
+##  References
+- [YOLOv8 Documentation](https://docs.ultralytics.com/)  
+- [Ultralytics GitHub](https://github.com/ultralytics/ultralytics)  
 
 
