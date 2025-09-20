@@ -364,4 +364,30 @@ model = YOLO("yolov8n.pt")
 - [YOLOv8 Documentation](https://docs.ultralytics.com/)  
 - [Ultralytics GitHub](https://github.com/ultralytics/ultralytics)  
 
+Part D: TensorRT Conversion and Inference Benchmarking
+Overview
 
+This section of the project focuses on deploying the best model from Part A or Part B using NVIDIA TensorRT for faster inference. The goal is to benchmark and compare the performance (inference time and accuracy) of the TensorRT model with the PyTorch model (CPU and GPU). This includes converting the model to ONNX, optimizing it using TensorRT, and running inference with various optimizations (FP16, INT8).
+
+Completed Tasks
+1. Model Export (PyTorch to ONNX)
+
+PyTorch Model was successfully converted to the ONNX format.
+
+Saved the model as cnn_garbage_best_model.onnx.
+
+2. TensorRT Conversion
+
+Loaded the ONNX model into TensorRT and built a serialized TensorRT engine.
+
+The model was saved as cnn_garbage_best_model.trt for inference.
+
+3. Inference Benchmarking
+
+Benchmarked the inference time for PyTorch (both on CPU and GPU).
+
+Latency per image was calculated for both CPU and GPU for comparison.
+
+4. TensorRT Engine Export
+
+The TensorRT engine (cnn_garbage_best_model.trt) was created and saved for further inference.
