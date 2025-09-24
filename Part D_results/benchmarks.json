@@ -1,0 +1,229 @@
+{
+  "pytorch_cpu": {
+    "accuracy": 0.056,
+    "latency_ms": 14.4488972068757,
+    "throughput_img_s": 1081.397408832325,
+    "cm": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        78
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        100
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        82
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        116
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        96
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        27
+      ]
+    ],
+    "report": {
+      "cardboard": {
+        "precision": 1.0,
+        "recall": 0.012658227848101266,
+        "f1-score": 0.025,
+        "support": 79.0
+      },
+      "glass": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 100.0
+      },
+      "metal": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 82.0
+      },
+      "paper": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 116.0
+      },
+      "plastic": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 96.0
+      },
+      "trash": {
+        "precision": 0.05410821643286573,
+        "recall": 1.0,
+        "f1-score": 0.10266159695817491,
+        "support": 27.0
+      },
+      "accuracy": 0.056,
+      "macro avg": {
+        "precision": 0.17568470273881096,
+        "recall": 0.1687763713080169,
+        "f1-score": 0.021276932826362487,
+        "support": 500.0
+      },
+      "weighted avg": {
+        "precision": 0.16092184368737475,
+        "recall": 0.056,
+        "f1-score": 0.009493726235741445,
+        "support": 500.0
+      }
+    },
+    "first_imgs": "<class 'torch.Tensor'>",
+    "first_labels": "<class 'torch.Tensor'>",
+    "first_preds": "<class 'torch.Tensor'>"
+  },
+  "pytorch_gpu": {
+    "accuracy": 0.056,
+    "latency_ms": 0.11069138918173849,
+    "throughput_img_s": 141158.22482222278,
+    "cm": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        78
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        100
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        82
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        116
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        96
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        27
+      ]
+    ],
+    "report": {
+      "cardboard": {
+        "precision": 1.0,
+        "recall": 0.012658227848101266,
+        "f1-score": 0.025,
+        "support": 79.0
+      },
+      "glass": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 100.0
+      },
+      "metal": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 82.0
+      },
+      "paper": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 116.0
+      },
+      "plastic": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 96.0
+      },
+      "trash": {
+        "precision": 0.05410821643286573,
+        "recall": 1.0,
+        "f1-score": 0.10266159695817491,
+        "support": 27.0
+      },
+      "accuracy": 0.056,
+      "macro avg": {
+        "precision": 0.17568470273881096,
+        "recall": 0.1687763713080169,
+        "f1-score": 0.021276932826362487,
+        "support": 500.0
+      },
+      "weighted avg": {
+        "precision": 0.16092184368737475,
+        "recall": 0.056,
+        "f1-score": 0.009493726235741445,
+        "support": 500.0
+      }
+    },
+    "first_imgs": "<class 'torch.Tensor'>",
+    "first_labels": "<class 'torch.Tensor'>",
+    "first_preds": "<class 'torch.Tensor'>"
+  },
+  "trt_fp32": {
+    "error": "'tensorrt_bindings.tensorrt.Builder' object has no attribute 'build_engine'"
+  },
+  "trt_fp16": {
+    "error": "'tensorrt_bindings.tensorrt.Builder' object has no attribute 'build_engine'"
+  },
+  "trt_int8": {
+    "error": "'tensorrt_bindings.tensorrt.Builder' object has no attribute 'build_engine'"
+  }
+}
